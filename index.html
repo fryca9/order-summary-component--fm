@@ -11,19 +11,9 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Order summary card</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main class="order__card">
@@ -42,13 +32,9 @@
           <img src="./images/icon-music.svg" alt="" class="plan__icon" />
           <strong class="plan__title">Annual Plan</strong>
           <p class="plan__price">$59.99/year</p>
-          <button
-            type="button"
-            class="plan__change"
-            aria-label="change your plan"
-          >
-            Change
-          </button>
+          <p class="plan__change" aria-label="change your plan">
+            <a href="#"> Change </a>
+          </p>
         </div>
         <button type="submit" class="summary__submit">
           Proceed to Payment
@@ -60,7 +46,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://github.com/fryca9">Eryk Frąckowiak</a>.
     </footer>
   </body>
 </html>

@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --website-bg: hsl(225, 100%, 94%);
+  --flex-bg: hsla(225, 100%, 94%, 0.5);
+  --accent: hsl(245, 75%, 52%);
+  --accent-hover: hsl(245, 50%, 50%);
+  --card-bg: hsl(225, 100%, 98%);
+  --text: hsl(224, 23%, 55%);
+  --title: hsl(223, 47%, 23%);
+}
+
+html {
+  background-image: url(./images/pattern-background-desktop.svg);
+  background-color: var(--website-bg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+  color: var(--text);
+}
+
+body {
+  height: 100svh;
+}
+
+.order__card,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.order__card {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 400px;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.order__card > img {
+  width: 100%;
+}
+
+.order__summary {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.summary__title {
+  font-weight: 900;
+  margin-top: 30px;
+  color: var(--title);
+}
+
+.summary__plan {
+  display: grid;
+  grid-template-columns: minmax(1fr, 100px) 1fr 1fr;
+  grid-template-rows: repeat(2, 40px);
+  grid-template-areas:
+    "icon title change"
+    "icon price change";
+  background-color: var(--flex-bg);
+  border-radius: 10px;
+}
+
+.plan__icon {
+  grid-area: icon;
+  place-self: center;
+}
+
+.plan__price,
+.plan__title {
+  justify-self: start;
+  align-self: flex-end;
+}
+
+.plan__title {
+  grid-area: title;
+  color: var(--title);
+  font-weight: 900;
+}
+
+.plan__price {
+  grid-area: price;
+}
+
+.plan__change {
+  grid-area: change;
+  place-self: center;
+  color: var(--accent);
+}
+
+.plan__change > a:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.summary__submit {
+  color: var(--card-bg);
+  background-color: var(--accent);
+  box-shadow: hsla(245, 75%, 52%, 0.13) 0px 10px 50px,
+    hsla(245, 75%, 52%, 0.33) 0px 6px 10px;
+  margin-top: 20px;
+}
+
+.summary__cancel {
+  color: var(--text);
+  background-color: transparent;
+}
+
+button {
+  width: 100%;
+  display: block;
+  height: 3.5em;
+  border: none;
+  font-weight: 700;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease-out;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.summary__submit:hover {
+  background-color: var(--accent-hover);
+}
+
+.summary__cancel:hover {
+  color: var(--title);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
