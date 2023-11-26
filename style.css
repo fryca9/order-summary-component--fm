@@ -22,14 +22,13 @@ html {
   font-family: "Red Hat Display", sans-serif;
 }
 
+body {
+  height: 100svh;
+}
+
 p {
   font-size: 1em;
   line-height: 1.4em;
-  color: var(--text);
-}
-
-body {
-  height: 100svh;
 }
 
 .order__card,
@@ -40,13 +39,19 @@ body {
   flex-direction: column;
 }
 
+/* ========================================== */
+
 .order__card {
   width: 95%;
-  margin: 0 auto;
   max-width: 400px;
-  background-color: var(--card-bg);
   overflow: hidden;
   border-radius: 20px;
+  background-color: var(--card-bg);
+}
+
+.order__card,
+.order__summary {
+  margin: 0 auto;
 }
 
 .order__card > img {
@@ -55,14 +60,28 @@ body {
 
 .order__summary {
   width: 80%;
-  margin: 0 auto;
   text-align: center;
 }
 
-.summary__title {
+.summary__title,
+.plan__title,
+.summary__cancel:hover {
   font-weight: 900;
-  margin-top: 30px;
   color: var(--title);
+}
+
+.summary__title {
+  margin-top: 30px;
+}
+
+p,
+.summary__cancel {
+  color: var(--text);
+}
+
+.summary__plan,
+button {
+  border-radius: 10px;
 }
 
 .summary__plan {
@@ -73,7 +92,6 @@ body {
     "icon title change"
     "icon price change";
   background-color: var(--flex-bg);
-  border-radius: 10px;
 }
 
 .plan__icon {
@@ -81,20 +99,18 @@ body {
   place-self: center;
 }
 
-.plan__price,
-.plan__title {
-  justify-self: start;
-  align-self: flex-end;
-}
-
 .plan__title {
   grid-area: title;
-  color: var(--title);
-  font-weight: 900;
 }
 
 .plan__price {
   grid-area: price;
+}
+
+.plan__price,
+.plan__title {
+  justify-self: start;
+  align-self: flex-end;
 }
 
 .plan__change {
@@ -117,7 +133,6 @@ body {
 }
 
 .summary__cancel {
-  color: var(--text);
   background-color: transparent;
 }
 
@@ -128,7 +143,6 @@ button {
   border: none;
   font-weight: 700;
   margin: 10px auto;
-  border-radius: 10px;
   font-size: 0.9rem;
   transition: transform 0.3s ease-out;
 }
@@ -142,9 +156,7 @@ button:hover {
   background-color: var(--accent-hover);
 }
 
-.summary__cancel:hover {
-  color: var(--title);
-}
+/* ========================================== */
 
 .attribution {
   font-size: 11px;
